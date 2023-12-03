@@ -1,0 +1,38 @@
+.todolist {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  margin-top: 4rem;
+  font-size: 0.875rem;
+}
+
+.todolist header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todolist header span {
+  background-color: var(--gray-400);
+  color: var(--gray-200);
+  font-size: 0.75rem;
+
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+}
+
+.todolist header .createdTasks {
+  color: var(--blue);
+  font-weight: bold;
+}
+
+.todolist header .finishedTasks {
+  color: var(--purple);
+  font-weight: bold;
+}
+
+.todolist main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}

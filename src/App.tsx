@@ -3,6 +3,7 @@ import styles from "./App.module.css";
 import "./global.css";
 import { TodoList } from "./components/TodoList";
 import { useState } from "react";
+import { IoMdAddCircleOutline } from "react-icons/io";
 
 function App() {
   const [task, setTask] = useState("");
@@ -20,7 +21,9 @@ function App() {
             placeholder="Adicione uma nova tarefa"
           />
 
-          <button>Criar</button>
+          <button>
+            Criar <IoMdAddCircleOutline />
+          </button>
         </div>
 
         <main>

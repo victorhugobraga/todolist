@@ -1,4 +1,5 @@
 import styles from "./Todo.module.css";
+import { FaRegTrashAlt } from "react-icons/fa";
 
 export const Todo = () => {
   return (
@@ -9,7 +10,9 @@ export const Todo = () => {
         Integer urna interdum massa libero auctor neque turpis turpis semper.
         Duis vel sed fames integer.
       </p>
-      <span>trash</span>
+      <button aria-label="excluír" title="excluir comentário">
+        <FaRegTrashAlt />
+      </button>
     </div>
   );
 };

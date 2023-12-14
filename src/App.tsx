@@ -5,8 +5,28 @@ import { TodoList } from "./components/TodoList";
 import { useState } from "react";
 import { IoMdAddCircleOutline } from "react-icons/io";
 
+export type Task = {
+  id: number;
+  description: string;
+  completed: boolean;
+};
+
 function App() {
-  const [task, setTask] = useState("");
+  const [taskInput, setTaskInput] = useState("");
+  const [task, setTask] = useState<Task[]>([]);
+
+  const handleCreateTask = () => {
+    if (taskInput === "") return;
+
+    const newTask = {
+      id: Math.random(),
+      description: taskInput,
+      completed: false,
+    };
+
+    setTask([...task, newTask]);
+    setTaskInput("");
+  };
 
   return (
     <div>
@@ -16,18 +36,18 @@ function App() {
         <div className={styles.createTask}>
           <input
             type="text"
-            value={task}
-            onChange={(e) => setTask(e.target.value)}
+            value={taskInput}
+            onChange={(e) => setTaskInput(e.target.value)}
             placeholder="Adicione uma nova tarefa"
           />
 
-          <button>
+          <button onClick={handleCreateTask}>
             Criar <IoMdAddCircleOutline />
           </button>
         </div>
 
         <main>
-          <TodoList />
+          <TodoList tasks={task} setTask={setTask} />
         </main>
       </div>
     </div>

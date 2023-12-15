@@ -29,7 +29,9 @@ export const TodoList = (props: TodoListProps) => {
 
       <main>
         {props.tasks && props.tasks.length > 0 ? (
-          props.tasks.map((task) => <Todo task={task} />)
+          props.tasks.map((task) => (
+            <Todo task={task} setTask={props.setTask} tasks={props.tasks} />
+          ))
         ) : (
           <div className={styles.statusMenssage}>
             <img src={Clipboard} alt="Prancheta vazia" />

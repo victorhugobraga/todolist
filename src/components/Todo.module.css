@@ -1,5 +1,6 @@
 .todo {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 0.75rem;
   padding: 1rem;
@@ -11,6 +12,22 @@
   border-radius: 0.5rem;
 
   cursor: pointer;
+  transition: 150ms;
+}
+
+.todo > div {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.todo:hover {
+  filter: brightness(0.9);
+}
+
+.todo .completed {
+  text-decoration: line-through;
+  color: var(--gray-300);
 }
 
 .todo label {

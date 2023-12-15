@@ -6,7 +6,6 @@ import { useState } from "react";
 import { IoMdAddCircleOutline } from "react-icons/io";
 
 export type Task = {
-  id: number;
   description: string;
   completed: boolean;
 };
@@ -19,7 +18,6 @@ function App() {
     if (taskInput === "") return;
 
     const newTask = {
-      id: Math.random(),
       description: taskInput,
       completed: false,
     };

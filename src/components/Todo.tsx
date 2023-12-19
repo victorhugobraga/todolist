@@ -26,14 +26,20 @@ export const Todo = ({ task, setTask, tasks }: TodoProps) => {
   const handleDeleteTask = (desc: string) => {
     setTask([...tasks.filter((task) => task.description !== desc)]);
   };
+
   return (
-    <div
-      className={styles.todo}
-      onClick={() => handleCheckTask(task.description)}
-    >
-      <div className={task.completed ? styles.completed : ""}>
+    <div className={styles.todo}>
+      <div
+        className={task.completed ? styles.completed : ""}
+        onClick={() => handleCheckTask(task.description)}
+      >
         <label htmlFor={`check-${task.description}`}>
-          <input type="radio" name={`check-${task.description}`} id={`check-${task.description}`} />
+          <input
+            type="radio"
+            name={`check-${task.description}`}
+            id={`check-${task.description}`}
+            onClick={() => handleCheckTask(task.description)}
+          />
         </label>
         <p>{task.description}</p>
       </div>

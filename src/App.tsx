@@ -36,6 +36,11 @@ function App() {
             type="text"
             value={taskInput}
             onChange={(e) => setTaskInput(e.target.value)}
+            onKeyUp={(e) => {
+              if (e.key === "Enter") {
+                handleCreateTask();
+              }
+            }}
             placeholder="Adicione uma nova tarefa"
           />
 
